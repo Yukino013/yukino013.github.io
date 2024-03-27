@@ -391,6 +391,31 @@
 
 
 
+<h3 id="3-7-黑夜模式和白天模式"><a href="#3-7-黑夜模式和白天模式" class="headerlink" title="3.7 黑夜模式和白天模式"></a>3.7 黑夜模式和白天模式</h3><p>黑色样式还没设计，功能已实现</p>
+<h3 id="3-8防抖和节流操作"><a href="#3-8防抖和节流操作" class="headerlink" title="3.8防抖和节流操作"></a>3.8防抖和节流操作</h3><h4 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖 debounce"></a>防抖 debounce</h4><blockquote>
+<p>当事件被频繁触发时，在一定的时间内再去执行回调函数，如果在等待期间再次被触发，则重新计时，直至整个等待期间没有新的事件被触发，执行回调函数。</p>
+</blockquote>
+<h4 id="节流-throttle"><a href="#节流-throttle" class="headerlink" title="节流 throttle"></a>节流 throttle</h4><blockquote>
+<p>在规定的时间内只触发一次回调函数，在规定时间内多次触发函数，只会执行一次</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; debounce &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash-es&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> debouceLoadBlogs = <span class="title function_">debounce</span>(<span class="function">()=&gt;</span>&#123;<span class="title function_">loadBlogs</span>(<span class="number">0</span>)&#125;, <span class="number">500</span>); <span class="comment">// 防抖函数，防止频繁调用接口</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;n-space class=&quot;search&quot;&gt;</span><br><span class="line">  &lt;n-input</span><br><span class="line">    v-model:value=&quot;pageInfo.keyword&quot;</span><br><span class="line">    :style=&quot;&#123; width: &#x27;500px&#x27; &#125;&quot;</span><br><span class="line">    placeholder=&quot;请输入关键字&quot;</span><br><span class="line">  /&gt;</span><br><span class="line">  &lt;n-button type=&quot;primary&quot; ghost @click=&quot;debouceLoadBlogs&quot;&gt; 搜索 &lt;/n-button&gt;</span><br><span class="line">&lt;/n-space&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; debounce,throttle&#125; <span class="keyword">from</span> <span class="string">&#x27;lodash-es&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> throttlelogin = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;<span class="title function_">login</span>()&#125;, <span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;n-button type=&quot;primary&quot; @click=&quot;throttlelogin&quot;  style=&quot;width: 100%;&quot;&gt;登录&lt;/n-button&gt;</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="4-期待实现"><a href="#4-期待实现" class="headerlink" title="4.期待实现"></a>4.期待实现</h2>
         </div>
 
